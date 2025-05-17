@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    depends_on:
+      - redis
+    env_file:
+      - .env
+    ports:
+      - 8095:8090
+  redis:
+    image: redis:7-alpine
